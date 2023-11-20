@@ -13,13 +13,13 @@ export default {
   methods: {
     get: function () {
       let dataCollection = []
-      axios.get('http://localhost:4000/todo')
+      axios.get('http://localhost:3000/todo')
         .then(res => {
           dataCollection = res.data
           console.log('dataCollection: ', dataCollection);
           dataCollection.forEach(data => {
             document.querySelector('.print-data').innerHTML
-              += `<li>id: ${data.id} <br>title: ${data.title} <br> content: ${data.completed}</li>`
+              += `<li>id: ${data.id} <br>title: ${data.flavor} <br> content: ${data.quantity}</li>`
           })
         })
         .catch((error) => console.log(error))
